@@ -7,5 +7,5 @@ GA-SEI - Project 1
 - CSS
 - Javascript
 
-#Planning
+## Planning
 image files here.
