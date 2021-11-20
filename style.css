@@ -15,7 +15,8 @@
 body {
     font-family: "Lato", sans-serif;
     font-size: 1.6rem;
-    background-color: hsl(105, 55%, 96%);
+    background-color: #f1faee;
+    background-image: linear-gradient(62deg, #f1faee 0%, #a8dadc 100%);
     color: hsl(215, 50%, 23%);
 }
 
@@ -23,12 +24,12 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30rem 1fr 30rem;
     place-content: center;
     height: 100vh;
     grid-template:
         ". header ."
-        "aside main ."
+        "aside main window"
         ". footer .";
 }
 
@@ -50,8 +51,8 @@ header {
 }
 
 h1 {
-    font-size: 7.2rem;
-    margin-bottom: 4.8rem;
+    font-size: 9.6rem;
+    margin-bottom: 2.4rem;
     text-align: center;
     color: hsl(355, 78%, 56%);
 }
@@ -68,6 +69,8 @@ main {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     background-color: hsl(215, 50%, 23%);
     gap: 0.5rem;
+    border-radius: 10rem;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .play_window div {
@@ -78,20 +81,66 @@ main {
     place-self: center;
 }
 
+#block_1 {
+    border-top-left-radius: 2.4rem;
+}
+
+#block_3 {
+    border-top-right-radius: 2.4rem;
+}
+
+#block_7 {
+    border-bottom-left-radius: 2.4rem;
+}
+
+#block_9 {
+    border-bottom-right-radius: 2.4rem;
+}
+
 /* Sidebar for Scores */
 
 aside {
     grid-area: aside;
+    margin-right: -2rem;
+    z-index: -1;
+}
+
+h2 {
+    text-align: center;
+    width: 30rem;
+    padding: 2.4rem 0;
+    margin: 2.4rem 0;
+    font-size: 3.6rem;
+    border-radius: 1.2rem;
+}
+
+.p1 {
+    background-color: hsl(355, 78%, 56%);
+    color: hsl(105, 55%, 96%);
+}
+
+.p2 {
+    background-color: hsl(203, 39%, 44%);
+    color: hsl(105, 55%, 96%);
+}
+
+h2 span {
+    margin-left: 2.4rem;
 }
 
 /* Footer */
 
 footer {
     grid-area: footer;
-    place-self: center;
+    text-align: center;
 }
 
 .icon {
+    fill: hsl(215, 50%, 23%);
     width: 2.4rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+}
+
+.icon:hover {
+    fill: hsl(355, 78%, 56%);
 }

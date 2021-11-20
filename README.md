@@ -1,6 +1,7 @@
 # Tic Tac Toe
 
 GA-SEI - Project 1
+[Live Version](https://tictactoe.mattgrah.am/)
 
 ## Technology Used
 
