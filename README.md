@@ -1,6 +1,7 @@
 # Tic Tac Toe
 
 GA-SEI - Project 1
+
 [Live Version](https://tictactoe.mattgrah.am/)
 
 ## Technology Used
@@ -18,6 +19,7 @@ GA-SEI - Project 1
 ### CSS styles
 
 **Font Family:** Lato (https://fonts.google.com/specimen/Lato)
+
 **Colours:**
 ![CSS Colours](./assets/css--colours.png)
 
