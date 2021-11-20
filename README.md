@@ -18,10 +18,10 @@ GA-SEI - Project 1
 
 ### CSS styles
 
-**Font Family:** Lato (https://fonts.google.com/specimen/Lato)
+-   **Font Family:** Lato (https://fonts.google.com/specimen/Lato)
 
-**Colours:**
-![CSS Colours](./assets/css--colours.png)
+-   **Colours:**
+    ![CSS Colours](./assets/css--colours.png)
 
 ### Javascript Challenges
 
