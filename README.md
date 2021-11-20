@@ -12,4 +12,6 @@ GA-SEI - Project 1
 
 ### HTML Wireframe
 
-![Mockup Wireframe](./assets/mockup.png | width=500px)
+<div style="width: 50%">
+![Mockup Wireframe](./assets/mockup.png)
+</div>
