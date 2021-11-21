@@ -22,32 +22,34 @@ let playerTurn = document.querySelector(".status");
 
 const winConditions = [
     [0, 1, 2],
-    [4, 5, 6],
-    [7, 8, 9],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7],
+    [0, 4, 8],
+    [2, 4, 6],
 ];
+
+const currentGame = [];
 
 // Main Click Function
 playWindow.addEventListener("click", function (event) {
     if (event.target.innerText !== "X" && event.target.innerText !== "O") {
         clickXO(event);
     }
-    winCheck();
+    winCheck(event);
 });
 
 // Set X or O Function
 function clickXO(event) {
     if (currentPlayer === "p1") {
-        currentPlayer = "p2";
         event.target.classList.add("player1");
         event.target.innerText = "X";
         playerTurn.classList.add("player2");
         playerTurn.classList.remove("player1");
         playerTurn.innerText = "Player 2's Turn";
+        currentPlayer = "p2";
     } else if (currentPlayer === "p2") {
         event.target.classList.add("player2");
         event.target.innerText = "O";
@@ -59,175 +61,47 @@ function clickXO(event) {
 }
 
 // Check for Win Condition
-function winCheck() {
-    if (block1.innerText === block2.innerText && block2.innerText === block3.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block1.classList.add("player1_win");
-            block2.classList.add("player1_win");
-            block3.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block1.classList.add("player2_win");
-            block2.classList.add("player2_win");
-            block3.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block4.innerText === block5.innerText && block5.innerText === block6.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block4.classList.add("player1_win");
-            block5.classList.add("player1_win");
-            block6.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block4.classList.add("player2_win");
-            block5.classList.add("player2_win");
-            block6.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block7.innerText === block8.innerText && block8.innerText === block9.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block7.classList.add("player1_win");
-            block8.classList.add("player1_win");
-            block9.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block7.classList.add("player2_win");
-            block8.classList.add("player2_win");
-            block9.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block1.innerText === block4.innerText && block4.innerText === block7.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block1.classList.add("player1_win");
-            block4.classList.add("player1_win");
-            block7.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block1.classList.add("player2_win");
-            block4.classList.add("player2_win");
-            block7.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block2.innerText === block5.innerText && block5.innerText === block8.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block2.classList.add("player1_win");
-            block5.classList.add("player1_win");
-            block8.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block2.classList.add("player2_win");
-            block5.classList.add("player2_win");
-            block8.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block3.innerText === block6.innerText && block6.innerText === block9.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block3.classList.add("player1_win");
-            block6.classList.add("player1_win");
-            block9.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block3.classList.add("player2_win");
-            block6.classList.add("player2_win");
-            block9.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block1.innerText === block5.innerText && block5.innerText === block9.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block1.classList.add("player1_win");
-            block5.classList.add("player1_win");
-            block9.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block1.classList.add("player2_win");
-            block5.classList.add("player2_win");
-            block9.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
-        }
-    } else if (block3.innerText === block5.innerText && block5.innerText === block7.innerText) {
-        if (currentPlayer !== "p1") {
-            playerTurn.innerText = "Player 1's Wins";
-            playerTurn.classList.add("player1");
-            playerTurn.classList.remove("player2");
-            block3.classList.add("player1_win");
-            block5.classList.add("player1_win");
-            block7.classList.add("player1_win");
-            player1++;
-            document.querySelector("#player1_score").innerText = player1;
-        } else if (currentPlayer !== "p2") {
-            playerTurn.innerText = "Player 2's Wins";
-            playerTurn.classList.add("player2");
-            playerTurn.classList.remove("player1");
-            block3.classList.add("player2_win");
-            block5.classList.add("player2_win");
-            block7.classList.add("player2_win");
-            player2++;
-            document.querySelector("#player2_score").innerText = player2;
+function winCheck(event) {
+    currentGame.push(event.target.innerText);
+    for (let index of winConditions) {
+        let a = index[0];
+        let b = index[1];
+        let c = index[2];
+        if (playWindow.children === undefined) {
+            continue;
+        } else if (
+            playWindow.children[a].innerText === playWindow.children[b].innerText &&
+            playWindow.children[b].innerText === playWindow.children[c].innerText
+        ) {
+            if (playWindow.children[a].innerText === "X") {
+                playerTurn.innerText = "Player 1's Wins";
+                playerTurn.classList.add("player1");
+                playerTurn.classList.remove("player2");
+                playWindow.children[a].classList.add("player1_win");
+                playWindow.children[b].classList.add("player1_win");
+                playWindow.children[c].classList.add("player1_win");
+                player1++;
+                document.querySelector("#player1_score").innerText = player1;
+            } else if (playWindow.children[a].innerText === "O") {
+                playerTurn.innerText = "Player 2's Wins";
+                playerTurn.classList.add("player2");
+                playerTurn.classList.remove("player1");
+                playWindow.children[a].classList.add("player2_win");
+                playWindow.children[b].classList.add("player2_win");
+                playWindow.children[c].classList.add("player2_win");
+                player2++;
+                document.querySelector("#player2_score").innerText = player2;
+            }
         }
     }
 }
+
 // Reset Button
 resetBtn.addEventListener("click", function () {
-    for (item in playWindow.children) {
-        playWindow.children[item].innerText = item + 1;
-        playWindow.children[item].classList.remove("player1_win", "player1");
-        playWindow.children[item].classList.remove("player2_win", "player2");
+    for (item of playWindow.children) {
+        item.innerText = "";
+        item.classList.remove("player1_win", "player1");
+        item.classList.remove("player2_win", "player2");
         player1 = 0;
         player2 = 0;
         document.querySelector("#player1_score").innerText = player1;
@@ -237,9 +111,9 @@ resetBtn.addEventListener("click", function () {
 
 // Play again Button (retain scores)
 playAgainBtn.addEventListener("click", function () {
-    for (item in playWindow.children) {
-        playWindow.children[item].innerText = item + 1;
-        playWindow.children[item].classList.remove("player1_win", "player1");
-        playWindow.children[item].classList.remove("player2_win", "player2");
+    for (item of playWindow.children) {
+        item.innerText = "";
+        item.classList.remove("player1_win", "player1");
+        item.classList.remove("player2_win", "player2");
     }
 });
