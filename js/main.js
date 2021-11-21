@@ -9,16 +9,8 @@ let currentPlayer = "p1";
 let playWindow = document.querySelector(".play_window");
 let resetBtn = document.getElementById("reset");
 let playAgainBtn = document.getElementById("play_again");
-let block1 = document.getElementById("block_1");
-let block2 = document.getElementById("block_2");
-let block3 = document.getElementById("block_3");
-let block4 = document.getElementById("block_4");
-let block5 = document.getElementById("block_5");
-let block6 = document.getElementById("block_6");
-let block7 = document.getElementById("block_7");
-let block8 = document.getElementById("block_8");
-let block9 = document.getElementById("block_9");
 let playerTurn = document.querySelector(".status");
+let winner = false;
 
 const winConditions = [
     [0, 1, 2],
@@ -33,30 +25,31 @@ const winConditions = [
 
 const currentGame = [];
 
-// Main Click Function
+// Main Click
 playWindow.addEventListener("click", function (event) {
-    if (event.target.innerText !== "X" && event.target.innerText !== "O") {
-        clickXO(event);
-    }
+    clickXO(event);
     winCheck(event);
+    drawCheck();
 });
 
 // Set X or O Function
 function clickXO(event) {
-    if (currentPlayer === "p1") {
-        event.target.classList.add("player1");
-        event.target.innerText = "X";
-        playerTurn.classList.add("player2");
-        playerTurn.classList.remove("player1");
-        playerTurn.innerText = "Player 2's Turn";
-        currentPlayer = "p2";
-    } else if (currentPlayer === "p2") {
-        event.target.classList.add("player2");
-        event.target.innerText = "O";
-        playerTurn.classList.add("player1");
-        playerTurn.classList.remove("player2");
-        playerTurn.innerText = "Player 1's Turn";
-        currentPlayer = "p1";
+    if (event.target.innerText !== "X" && event.target.innerText !== "O") {
+        if (currentPlayer === "p1") {
+            event.target.classList.add("player1");
+            event.target.innerText = "X";
+            playerTurn.classList.add("player2");
+            playerTurn.classList.remove("player1");
+            playerTurn.innerText = "Player 2's Turn";
+            currentPlayer = "p2";
+        } else if (currentPlayer === "p2") {
+            event.target.classList.add("player2");
+            event.target.innerText = "O";
+            playerTurn.classList.add("player1");
+            playerTurn.classList.remove("player2");
+            playerTurn.innerText = "Player 1's Turn";
+            currentPlayer = "p1";
+        }
     }
 }
 
@@ -67,9 +60,7 @@ function winCheck(event) {
         let a = index[0];
         let b = index[1];
         let c = index[2];
-        if (playWindow.children === undefined) {
-            continue;
-        } else if (
+        if (
             playWindow.children[a].innerText === playWindow.children[b].innerText &&
             playWindow.children[b].innerText === playWindow.children[c].innerText
         ) {
@@ -82,6 +73,7 @@ function winCheck(event) {
                 playWindow.children[c].classList.add("player1_win");
                 player1++;
                 document.querySelector("#player1_score").innerText = player1;
+                winner = true;
             } else if (playWindow.children[a].innerText === "O") {
                 playerTurn.innerText = "Player 2's Wins";
                 playerTurn.classList.add("player2");
@@ -91,8 +83,17 @@ function winCheck(event) {
                 playWindow.children[c].classList.add("player2_win");
                 player2++;
                 document.querySelector("#player2_score").innerText = player2;
+                winner = true;
             }
         }
+    }
+}
+
+// Check of draw
+function drawCheck() {
+    if (currentGame.length === 9 && winner === false) {
+        playerTurn.innerText = "It's a Tie!";
+        playerTurn.classList.remove("player1", "player2");
     }
 }
 
