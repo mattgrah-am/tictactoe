@@ -52,7 +52,7 @@ This project encapsulates everything we have learnt in the first 5 weeks of GA-S
         - 2 / 5 / 8
         - 3 / 6 / 9
         - 1 / 5 / 9
-        - 3 / 5 / 9
+        - 3 / 5 / 7
 
 5. Keeping track of the score
 
