@@ -2,7 +2,53 @@
 
 GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 
-This project encapsulates everything we have learnt in the first 5 weeks of GA-SEI-flex. This includes HTML, CSS, Flex, Grid, JavaScript, DOM manipulation, GIT, and GitHub.
+## Technical Requirements
+
+-   Render a game in the browser
+-   Switch turns between more than one player
+-   Design logic for winning & visually display which player won
+-   Include separate HTML / CSS / JavaScript files
+-   Stick with KISS (Keep It Simple Stupid) principles
+-   Use Javascript for DOM manipulation
+-   Deploy your game online, where the rest of the world can access it
+-   Use semantic markup for HTML and CSS (adhere to best practices)
+
+## Checkpoints
+
+### EOD Saturday, Nov 20
+
+-   [x] Completed designs
+-   [x] Set up Git Repo
+-   [x] Push basic page
+-   [x] Setup Github Pages
+
+### EOD Monday, Nov 22
+
+-   [x] HTML Layout completed
+-   [x] First JavaScript functionality added
+-   [x] Suggested that by now you can click on boxes and have them fill in an X or an O
+
+### EOD Wednesday, Nov 24
+
+-   [x] Have mostly a functioning game with at least one winning condition done
+
+### 3:00pm Saturday, Nov 27
+
+-   Game complete, bugs fixed
+-   CSS polished
+-   Readme updated
+-   Tested on Github pages
+
+## Bonus extensions
+
+-   [x] Keep track of multiple game rounds with a win counter
+-   Allow game customizable options, time limits, board size, game rounds, name & profiles etc
+-   Allow players to customize their token (X, O, name, picture, avatar etc)
+-   Get inventive with your styling - research CSS effects, animations to spiff things up
+-   Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
+-   Use timers to display "waiting..." messages while users are waiting to be matched
+-   Research web audio API and add sound effects to your game
+-   Be creative! Bend the rules and give it a twist!
 
 ## Technology Used
 
