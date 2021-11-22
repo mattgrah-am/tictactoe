@@ -34,7 +34,7 @@ function playGame() {
             drawCheck();
         });
     } 
-    return;
+    this.removeEventListener(event.type, handler);
 }
 
 playGame()
