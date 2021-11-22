@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Orbitron:wght@900&display=swap");
 
 /* Resets and defaults */
 * {
@@ -24,11 +24,12 @@ body {
 
 .container {
     display: grid;
-    place-content: center;
+    justify-content: center;
+    align-content: start;
     height: 100vh;
     grid-template:
         ". header ."
-        "aside main window"
+        "left main right"
         ". footer .";
 }
 
@@ -47,6 +48,7 @@ a:active {
 
 header {
     grid-area: header;
+    margin-top: 4.8rem;
 }
 
 h1 {
@@ -70,7 +72,7 @@ main {
     border-radius: 2.4rem;
     background-color: hsl(105, 55%, 96%);
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
-    color: hsl(105, 55%, 96%);
+    position: relative;
 }
 
 .play_window div {
@@ -125,32 +127,51 @@ main {
     color: hsl(105, 55%, 96%) !important;
 }
 
-/* Sidebar for Scores */
+/* Left Sidebar for Scores */
 
-aside {
-    grid-area: aside;
-    margin-right: -1rem;
-    z-index: -1;
+.left {
+    grid-area: left;
 }
 
 h2 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 20rem;
-    padding: 1.6rem 0;
-    margin: 1.4rem 0;
-    font-size: 2.4rem;
-    border-radius: 1.2rem;
+    padding: 1rem 0;
+    margin: 2.4rem 0;
+    font-size: 1.6rem;
     color: hsl(105, 55%, 96%);
+    text-transform: uppercase;
 }
 
 h2 span {
-    margin-left: 2.4rem;
+    font-family: "Orbitron", sans-serif;
+    font-size: 3.2rem;
 }
 
-.window {
-    width: 22rem;
-    grid-area: window;
+#p1 {
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
 }
+
+#p2 {
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+
+#player1_score {
+    margin-left: 2.4rem;
+    border-left: 2px solid hsl(105, 55%, 96%);
+    padding-left: 2.4rem;
+}
+
+#player2_score {
+    margin-right: 2.4rem;
+    border-right: 2px solid hsl(105, 55%, 96%);
+    padding-right: 2.4rem;
+}
+
 /* Status bar */
 
 .status_bar {
@@ -160,37 +181,63 @@ h2 span {
 .status {
     font-size: 3.6rem;
     font-weight: 700;
-    margin: 4.8rem 0;
+    padding: 1.2rem 0;
+    margin: 4.8rem 0 1.2rem;
+}
+
+.win {
+    display: none;
+    width: 100%;
+}
+
+/* Right side bar for play and reset buttons */
+
+.right {
+    grid-area: right;
 }
 
 .btn {
+    display: none;
     background-color: hsl(215, 50%, 23%);
     color: hsl(105, 55%, 96%);
     border: none;
     width: 20rem;
-    border-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
     padding: 1.6rem 0;
     font-size: 2.4rem;
-    margin: 0 1.2rem;
+    margin: 1.4rem 0;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#play_again {
+    margin-top: 19rem;
 }
 
 /* Footer */
 
 footer {
-    grid-area: footer;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
+    grid-area: footer;
     font-size: 1.2rem;
-    border-top: 1px solid hsl(215, 50%, 23%);
     padding: 1.2rem;
+    color: hsl(105, 55%, 96%);
+    background-color: hsl(215, 50%, 23%);
+    background-image: linear-gradient(62deg, hsl(215, 50%, 23%) 50%, hsl(355, 78%, 56%) 100%);
 }
 
-.icon {
-    fill: hsl(215, 50%, 23%);
-    width: 1.6rem;
-    margin-right: 0.5rem;
+footer a:link,
+footer a:visited {
+    text-decoration: none;
+    color: hsl(105, 55%, 96%);
+    margin: 0 2rem;
 }
 
-.icon:hover {
-    fill: hsl(355, 78%, 56%);
+footer a:hover,
+footer a:active {
+    color: hsl(355, 78%, 56%);
 }

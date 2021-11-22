@@ -13,6 +13,7 @@ let playWindow = document.querySelector(".play_window");
 let resetBtn = document.getElementById("reset");
 let playAgainBtn = document.getElementById("play_again");
 let playerTurn = document.querySelector(".status");
+let winImg = document.querySelector(".win");
 
 const winConditions = [
     [0, 1, 2],
@@ -52,7 +53,7 @@ function clickPlayer(player, event) {
     event.target.innerText = player === "Player 1" ? "X" : "O";
     playerTurn.style.color = player === "Player 1" ? "hsl(203, 39%, 44%)" : "hsl(355, 78%, 56%)";
     currentPlayer = player === "Player 1" ? "Player 2" : "Player 1";
-    playerTurn.innerText = `${player}'s Turn`;
+    playerTurn.innerText = `${currentPlayer}'s Turn`;
 }
 
 // Check for Win Condition
@@ -71,32 +72,42 @@ function winCheck(event) {
                 return;
             } else if (playWindow.children[a].innerText === "X") {
                 playerTurn.innerText = `Player 1 Wins`;
-                playerTurn.style.color = "hsl(355, 78%, 56%)";
+                playerTurn.classList.add("player1");
                 playWindow.children[a].classList.add("player1");
                 playWindow.children[b].classList.add("player1");
                 playWindow.children[c].classList.add("player1");
                 player1++;
                 document.querySelector("#player1_score").innerText = player1;
-                winner = true;
+                winCond();
             } else if (playWindow.children[a].innerText === "O") {
                 playerTurn.innerText = `Player 2 Wins`;
-                playerTurn.style.color = "hsl(203, 39%, 44%)";
+                playerTurn.classList.add("player2");
                 playWindow.children[a].classList.add("player2");
                 playWindow.children[b].classList.add("player2");
                 playWindow.children[c].classList.add("player2");
                 player2++;
                 document.querySelector("#player2_score").innerText = player2;
-                winner = true;
+                winCond();
             }
         }
     }
 }
 
+// Function for common win conditions
+function winCond() {
+    winner = true;
+    resetBtn.style.display = "block";
+    playAgainBtn.style.display = "block";
+    winImg.style.display = "block";
+}
+
 // Check of draw
 function drawCheck() {
-    if (currentGame.length >= 9 && winner === false) {
+    if (currentGame.length === 9 && winner === false) {
         playerTurn.innerText = "It's a Tie!";
         playerTurn.style.color = "hsl(215, 50%, 23%)";
+        resetBtn.style.display = "block";
+        playAgainBtn.style.display = "block";
     }
 }
 
@@ -106,8 +117,12 @@ function boardClear() {
     item.classList.remove("player1", "player2");
     winner = false;
     currentGame = [];
+    playerTurn.classList.remove("player1", "player2");
     playerTurn.innerText = `Begin Game`;
     playerTurn.style.color = "hsl(215, 50%, 23%)";
+    resetBtn.style.display = "none";
+    playAgainBtn.style.display = "none";
+    winImg.style.display = "none";
 }
 
 // Play again Button (retain scores)
