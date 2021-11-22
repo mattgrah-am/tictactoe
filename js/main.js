@@ -26,11 +26,18 @@ const winConditions = [
 let currentGame = [];
 
 // Main Click
-playWindow.addEventListener("click", function (event) {
-    clickXO(event);
-    winCheck(event);
-    drawCheck();
-});
+function playGame() {
+    if(!winner) {
+        playWindow.addEventListener("click", function (event) {
+            clickXO(event);
+            winCheck(event);
+            drawCheck();
+        });
+    } 
+    return;
+}
+
+playGame()
 
 // Set X or O Function
 function clickXO(event) {
