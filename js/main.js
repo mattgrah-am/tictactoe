@@ -26,18 +26,11 @@ const winConditions = [
 const currentGame = [];
 
 // Main Click
-function playGame() {
-    if(!winner) {
-        playWindow.addEventListener("click", function (event) {
-            clickXO(event);
-            winCheck(event);
-            drawCheck();
-        });
-    }
-    return;
-}
-
-playGame()
+playWindow.addEventListener("click", function (event) {
+    clickXO(event);
+    winCheck(event);
+    drawCheck();
+});
 
 // Set X or O Function
 function clickXO(event) {
@@ -72,7 +65,7 @@ function winCheck(event) {
             playWindow.children[b].innerText === playWindow.children[c].innerText
         ) {
             if (playWindow.children[a].innerText === "X") {
-                playerTurn.innerText = `${currentPlayer}'s Wins`;
+                playerTurn.innerText = `Player 1 Wins`;
                 playerTurn.classList.add("player1");
                 playerTurn.classList.remove("player2");
                 playWindow.children[a].classList.add("player1_win");
@@ -82,7 +75,7 @@ function winCheck(event) {
                 document.querySelector("#player1_score").innerText = player1;
                 winner = true;
             } else if (playWindow.children[a].innerText === "O") {
-                playerTurn.innerText = `${currentPlayer}'s Wins`;
+                playerTurn.innerText = `Player 2 Wins`;
                 playerTurn.classList.add("player2");
                 playerTurn.classList.remove("player1");
                 playWindow.children[a].classList.add("player2_win");
