@@ -23,7 +23,7 @@ const winConditions = [
     [2, 4, 6],
 ];
 
-const currentGame = [];
+let currentGame = [];
 
 // Main Click
 playWindow.addEventListener("click", function (event) {
@@ -108,7 +108,7 @@ resetBtn.addEventListener("click", function () {
         document.querySelector("#player1_score").innerText = player1;
         document.querySelector("#player2_score").innerText = player2;
         winner = false;
-        currentGame.length = 0; 
+        currentGame = []
     }
 });
 
@@ -119,6 +119,7 @@ playAgainBtn.addEventListener("click", function () {
         item.classList.remove("player1_win", "player1");
         item.classList.remove("player2_win", "player2");
         winner = false;
-        currentGame.length = 0;        
+        currentGame = []
+        
     }
 });
