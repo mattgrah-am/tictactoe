@@ -107,6 +107,7 @@ resetBtn.addEventListener("click", function () {
         player2 = 0;
         document.querySelector("#player1_score").innerText = player1;
         document.querySelector("#player2_score").innerText = player2;
+        winner = false;
     }
 });
 
@@ -116,5 +117,6 @@ playAgainBtn.addEventListener("click", function () {
         item.innerText = "";
         item.classList.remove("player1_win", "player1");
         item.classList.remove("player2_win", "player2");
+        winner = false;
     }
 });
