@@ -34,7 +34,11 @@ function playGame() {
             drawCheck();
         });
     } 
-    this.removeEventListener(event.type, handler);
+    playWindow.removeEventListener("click", function (event) {
+        clickXO(event);
+        winCheck(event);
+        drawCheck();
+    });
 }
 
 playGame()
