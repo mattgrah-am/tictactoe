@@ -6,11 +6,11 @@
 let player1 = 0;
 let player2 = 0;
 let currentPlayer = "Player 1";
+let winner = false;
 let playWindow = document.querySelector(".play_window");
 let resetBtn = document.getElementById("reset");
 let playAgainBtn = document.getElementById("play_again");
 let playerTurn = document.querySelector(".status");
-let winner = false;
 
 const winConditions = [
     [0, 1, 2],
@@ -26,14 +26,14 @@ const winConditions = [
 let currentGame = [];
 
 // Main Click
-playWindow.addEventListener("click", function (event) {
-    if(!winner) {
-            clickXO(event);
-            winCheck(event);
-            drawCheck();
-        } return;
+playWindow.addEventListener("mousedown", function (event) {
+    if (!winner) {
+        clickXO(event);
+        winCheck(event);
+        drawCheck();
+    }
+    return;
 });
-
 
 // Set X or O Function
 function clickXO(event) {
@@ -63,11 +63,14 @@ function winCheck(event) {
         let a = index[0];
         let b = index[1];
         let c = index[2];
-        if (
+        if (playWindow.children.length === 0) continue;
+        else if (
             playWindow.children[a].innerText === playWindow.children[b].innerText &&
             playWindow.children[b].innerText === playWindow.children[c].innerText
         ) {
-            if (playWindow.children[a].innerText === "X") {
+            if (playWindow.children[a].innerText === undefined) {
+                return;
+            } else if (playWindow.children[a].innerText === "X") {
                 playerTurn.innerText = `Player 1 Wins`;
                 playerTurn.classList.add("player1");
                 playerTurn.classList.remove("player2");
@@ -94,35 +97,32 @@ function winCheck(event) {
 
 // Check of draw
 function drawCheck() {
-    if (currentGame.length === 9 && winner === false) {
+    if (currentGame.length >= 9 && winner === false) {
         playerTurn.innerText = "It's a Tie!";
         playerTurn.classList.remove("player1", "player2");
     }
 }
 
-// Reset Button
-resetBtn.addEventListener("click", function () {
-    for (item of playWindow.children) {
-        item.innerText = "";
-        item.classList.remove("player1_win", "player1");
-        item.classList.remove("player2_win", "player2");
-        player1 = 0;
-        player2 = 0;
-        document.querySelector("#player1_score").innerText = player1;
-        document.querySelector("#player2_score").innerText = player2;
-        winner = false;
-        currentGame = []
-    }
-});
+// Function for both playagain and reset btn to clear board.
+function boardClear() {
+    item.innerText = "";
+    item.classList.remove("player1_win", "player2_win", "player1", "player2");
+    winner = false;
+    currentGame = [];
+}
 
 // Play again Button (retain scores)
 playAgainBtn.addEventListener("click", function () {
     for (item of playWindow.children) {
-        item.innerText = "";
-        item.classList.remove("player1_win", "player1");
-        item.classList.remove("player2_win", "player2");
-        winner = false;
-        currentGame = []
-        
+        boardClear();
+    }
+});
+
+// Reset Button
+resetBtn.addEventListener("click", function () {
+    for (item of playWindow.children) {
+        boardClear();
+        document.querySelector("#player1_score").innerText = player1 = 0;
+        document.querySelector("#player2_score").innerText = player2 = 0;
     }
 });
