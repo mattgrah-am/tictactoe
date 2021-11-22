@@ -14,6 +14,8 @@ let resetBtn = document.getElementById("reset");
 let playAgainBtn = document.getElementById("play_again");
 let playerTurn = document.querySelector(".status");
 let winImg = document.querySelector(".win");
+let playerScore1 = document.querySelector("#player1_score");
+let playerScore2 = document.querySelector("#player2_score");
 
 const winConditions = [
     [0, 1, 2],
@@ -50,7 +52,7 @@ function clickXO(event) {
 // function for each player styling on click.
 function clickPlayer(player, event) {
     event.target.style.color = player === "Player 1" ? "hsl(355, 78%, 56%)" : "hsl(203, 39%, 44%)";
-    event.target.innerText = player === "Player 1" ? "X" : "O";
+    event.target.innerText = player === "Player 1" ? "👾" : "🤖";
     playerTurn.style.color = player === "Player 1" ? "hsl(203, 39%, 44%)" : "hsl(355, 78%, 56%)";
     currentPlayer = player === "Player 1" ? "Player 2" : "Player 1";
     playerTurn.innerText = `${currentPlayer}'s Turn`;
@@ -70,23 +72,23 @@ function winCheck(event) {
         ) {
             if (playWindow.children[a].innerText === undefined) {
                 return;
-            } else if (playWindow.children[a].innerText === "X") {
+            } else if (playWindow.children[a].innerText === "👾") {
                 playerTurn.innerText = `Player 1 Wins`;
                 playerTurn.classList.add("player1");
                 playWindow.children[a].classList.add("player1");
                 playWindow.children[b].classList.add("player1");
                 playWindow.children[c].classList.add("player1");
                 player1++;
-                document.querySelector("#player1_score").innerText = player1;
+                playerScore1.innerText = player1;
                 winCond();
-            } else if (playWindow.children[a].innerText === "O") {
+            } else if (playWindow.children[a].innerText === "🤖") {
                 playerTurn.innerText = `Player 2 Wins`;
                 playerTurn.classList.add("player2");
                 playWindow.children[a].classList.add("player2");
                 playWindow.children[b].classList.add("player2");
                 playWindow.children[c].classList.add("player2");
                 player2++;
-                document.querySelector("#player2_score").innerText = player2;
+                playerScore2.innerText = player2;
                 winCond();
             }
         }
@@ -136,7 +138,7 @@ playAgainBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
     for (item of playWindow.children) {
         boardClear();
-        document.querySelector("#player1_score").innerText = player1 = 0;
-        document.querySelector("#player2_score").innerText = player2 = 0;
+        playerScore1.innerText = player1 = 0;
+        playerScore2.innerText = player2 = 0;
     }
 });
