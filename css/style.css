@@ -116,21 +116,13 @@ main {
 }
 
 .player1 {
-    color: hsl(355, 78%, 56%);
+    background-color: hsl(355, 78%, 56%);
+    color: hsl(105, 55%, 96%) !important;
 }
 
 .player2 {
-    color: hsl(203, 39%, 44%);
-}
-
-.player1_win {
-    background-color: hsl(355, 78%, 56%);
-    color: hsl(105, 55%, 96%);
-}
-
-.player2_win {
     background-color: hsl(203, 39%, 44%);
-    color: hsl(105, 55%, 96%);
+    color: hsl(105, 55%, 96%) !important;
 }
 
 /* Sidebar for Scores */
@@ -149,14 +141,6 @@ h2 {
     font-size: 2.4rem;
     border-radius: 1.2rem;
     color: hsl(105, 55%, 96%);
-}
-
-.p1 {
-    background-color: hsl(355, 78%, 56%);
-}
-
-.p2 {
-    background-color: hsl(203, 39%, 44%);
 }
 
 h2 span {
