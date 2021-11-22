@@ -46,7 +46,7 @@ function clickXO(event) {
     }
 }
 
-// function for each player styling.
+// function for each player styling on click.
 function clickPlayer(player, event) {
     event.target.style.color = player === "Player 1" ? "hsl(355, 78%, 56%)" : "hsl(203, 39%, 44%)";
     event.target.innerText = player === "Player 1" ? "X" : "O";
