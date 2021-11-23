@@ -51,9 +51,9 @@ function clickXO(event) {
 
 // function for each player styling on click.
 function clickPlayer(player, event) {
-    event.target.style.color = player === "Player 1" ? "hsl(355, 78%, 56%)" : "hsl(203, 39%, 44%)";
+    event.target.style.color = player === "Player 1" ? "hsl(265, 42%, 63%)" : "hsl(189, 60%, 34%)";
     event.target.innerText = player === "Player 1" ? "👾" : "🤖";
-    playerTurn.style.color = player === "Player 1" ? "hsl(203, 39%, 44%)" : "hsl(355, 78%, 56%)";
+    playerTurn.style.color = player === "Player 1" ? "hsl(189, 60%, 34%)" : "hsl(265, 42%, 63%)";
     currentPlayer = player === "Player 1" ? "Player 2" : "Player 1";
     playerTurn.innerText = `${currentPlayer}'s Turn`;
 }
@@ -107,7 +107,7 @@ function winCond() {
 function drawCheck() {
     if (currentGame.length === 9 && winner === false) {
         playerTurn.innerText = "It's a Tie!";
-        playerTurn.style.color = "hsl(215, 50%, 23%)";
+        playerTurn.style.color = "hsl(0, 0%, 0%)";
         resetBtn.style.display = "block";
         playAgainBtn.style.display = "block";
     }
@@ -121,7 +121,7 @@ function boardClear() {
     currentGame = [];
     playerTurn.classList.remove("player1", "player2");
     playerTurn.innerText = `Begin Game`;
-    playerTurn.style.color = "hsl(215, 50%, 23%)";
+    playerTurn.style.color = "hsl(0, 0%, 0%)";
     resetBtn.style.display = "none";
     playAgainBtn.style.display = "none";
     winImg.style.display = "none";

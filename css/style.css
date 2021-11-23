@@ -15,9 +15,9 @@
 body {
     font-family: "Lato", sans-serif;
     font-size: 1.6rem;
-    background-color: #f1faee;
-    background-image: linear-gradient(62deg, #f1faee 0%, #a8dadc 100%);
-    color: hsl(215, 50%, 23%);
+    background-color: hsl(265, 42%, 85%);
+    background-image: linear-gradient(62deg, hsl(265, 42%, 85%) 0%, hsl(189, 60%, 85%) 100%);
+    color: hsl(0, 0%, 0%);
 }
 
 /* Container */
@@ -36,12 +36,12 @@ body {
 a:link,
 a:visited {
     text-decoration: none;
-    color: hsl(215, 50%, 23%);
+    color: hsl(0, 0%, 0%);
 }
 
 a:hover,
 a:active {
-    color: hsl(355, 78%, 56%);
+    color: hsl(265, 42%, 63%);
 }
 
 /* Header */
@@ -51,12 +51,8 @@ header {
     margin-top: 4.8rem;
 }
 
-h1 {
-    font-size: 7.2rem;
-    margin-bottom: 2.4rem;
-    text-align: center;
-    color: hsl(355, 78%, 56%);
-    text-shadow: 0px 6px 3px rgba(0, 0, 0, 0.2);
+header img {
+    max-width: 45rem;
 }
 
 /* Main Window */
@@ -70,7 +66,7 @@ main {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     border-radius: 2.4rem;
-    background-color: hsl(105, 55%, 96%);
+    background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
     position: relative;
 }
@@ -86,19 +82,19 @@ main {
 }
 
 #block_5 {
-    border: 2px solid hsl(215, 50%, 23%);
+    border: 2px solid hsl(0, 0%, 0%);
 }
 
 #block_2,
 #block_8 {
-    border-left: 2px solid hsl(215, 50%, 23%);
-    border-right: 2px solid hsl(215, 50%, 23%);
+    border-left: 2px solid hsl(0, 0%, 0%);
+    border-right: 2px solid hsl(0, 0%, 0%);
 }
 
 #block_4,
 #block_6 {
-    border-top: 2px solid hsl(215, 50%, 23%);
-    border-bottom: 2px solid hsl(215, 50%, 23%);
+    border-top: 2px solid hsl(0, 0%, 0%);
+    border-bottom: 2px solid hsl(0, 0%, 0%);
 }
 
 #block_1 {
@@ -118,13 +114,13 @@ main {
 }
 
 .player1 {
-    background-color: hsl(355, 78%, 56%);
-    color: hsl(105, 55%, 96%) !important;
+    background-color: hsl(265, 42%, 63%);
+    color: hsl(0, 0%, 100%) !important;
 }
 
 .player2 {
-    background-color: hsl(203, 39%, 44%);
-    color: hsl(105, 55%, 96%) !important;
+    background-color: hsl(189, 60%, 34%);
+    color: hsl(0, 0%, 100%) !important;
 }
 
 /* Left Sidebar for Scores */
@@ -141,7 +137,7 @@ h2 {
     padding: 1rem 0;
     margin: 2.4rem 0;
     font-size: 1.6rem;
-    color: hsl(105, 55%, 96%);
+    color: hsl(0, 0%, 100%);
     text-transform: uppercase;
 }
 
@@ -162,13 +158,13 @@ h2 span {
 
 #player1_score {
     margin-left: 2.4rem;
-    border-left: 2px solid hsl(105, 55%, 96%);
+    border-left: 2px solid hsl(0, 0%, 100%);
     padding-left: 2.4rem;
 }
 
 #player2_score {
     margin-right: 2.4rem;
-    border-right: 2px solid hsl(105, 55%, 96%);
+    border-right: 2px solid hsl(0, 0%, 100%);
     padding-right: 2.4rem;
 }
 
@@ -198,8 +194,8 @@ h2 span {
 
 .btn {
     display: none;
-    background-color: hsl(215, 50%, 23%);
-    color: hsl(105, 55%, 96%);
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
     border: none;
     width: 20rem;
     border-top-right-radius: 1.2rem;
@@ -225,19 +221,19 @@ footer {
     grid-area: footer;
     font-size: 1.2rem;
     padding: 1.2rem;
-    color: hsl(105, 55%, 96%);
-    background-color: hsl(215, 50%, 23%);
-    background-image: linear-gradient(62deg, hsl(215, 50%, 23%) 50%, hsl(355, 78%, 56%) 100%);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 0%);
+    background-image: linear-gradient(62deg, hsl(0, 0%, 0%) 0%, hsl(265, 42%, 63%) 100%);
 }
 
 footer a:link,
 footer a:visited {
     text-decoration: none;
-    color: hsl(105, 55%, 96%);
+    color: hsl(0, 0%, 100%);
     margin: 0 2rem;
 }
 
 footer a:hover,
 footer a:active {
-    color: hsl(355, 78%, 56%);
+    color: hsl(265, 42%, 63%);
 }
