@@ -34,7 +34,7 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 
 ### 3:00pm Saturday, Nov 27
 
--   Game complete, bugs fixed
+-   [x] Game complete, bugs fixed
 -   CSS polished
 -   Readme updated
 -   Tested on Github pages
@@ -67,7 +67,12 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 -   **Font Family:** Lato (https://fonts.google.com/specimen/Lato)
 
 -   **Colours:**
-    ![CSS Colours](./assets/css--colours.png)
+    -   Primary 1: hsl(265, 42%, 63%)
+    -   Primary 2: hsl(189, 60%, 34%)
+    -   Shade 1: hsl(265, 42%, 85%)
+    -   Shade 2: hsl(189, 60%, 85%)
+    -   Black: hsl(0, 0%, 0%)
+    -   White: hsl(0, 0%, 100%)
 
 ### Javascript Challenges
 
