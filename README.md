@@ -103,6 +103,6 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
     - when a player wins add 1 point to the players score
     - when the reset button is pressed it sets the players score back to 0.
 
-6. setting up play again and reset buttons
+6. Setting up play again and reset buttons
 
     - when a player wins the buttons are shown. Pressing the play again button, resets the board by clearing all cells, and pressing reset scores, clears the board and also sets the scores to 0.
