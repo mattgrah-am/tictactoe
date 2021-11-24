@@ -24,9 +24,9 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 -   [x] Suggested that by now you can click on boxes and have them fill in an X or an O
 -   [x] Have mostly a functioning game with at least one winning condition done
 -   [x] Game complete, bugs fixed
--   [x]CSS polished
--   [x]Readme updated
--   [x]Tested on Github pages
+-   [x] CSS polished
+-   [x] Readme updated
+-   [x] Tested on Github pages
 -   [x] Keep track of multiple game rounds with a win counter
 -   [x] Get inventive with your styling - research CSS effects, animations to spiff things up
 -   Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
