@@ -33,17 +33,6 @@ body {
         ". footer .";
 }
 
-a:link,
-a:visited {
-    text-decoration: none;
-    color: hsl(0, 0%, 0%);
-}
-
-a:hover,
-a:active {
-    color: hsl(265, 42%, 63%);
-}
-
 /* Header */
 
 header {
@@ -115,13 +104,15 @@ main {
 
 .player1 {
     background-color: hsl(265, 42%, 63%);
-    color: hsl(0, 0%, 100%) !important;
+    color: hsl(0, 0%, 100%);
 }
 
 .player2 {
     background-color: hsl(189, 60%, 34%);
-    color: hsl(0, 0%, 100%) !important;
+    color: hsl(0, 0%, 100%);
 }
+
+/* Player indicator */
 
 .indicator {
     display: flex;
