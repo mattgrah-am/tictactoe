@@ -9,6 +9,7 @@ let currentPlayer = "Player 1";
 let nextPlayer = "Player 2";
 let winner = false;
 let symbol = "X";
+let winAudio = new Audio("./assets/win.mp3");
 let playWindow = document.querySelector(".play_window");
 let resetBtn = document.getElementById("reset");
 let playAgainBtn = document.getElementById("play_again");
@@ -98,6 +99,7 @@ function winCheck(event) {
 // Function for common win conditions
 function winCond() {
     winner = true;
+    winAudio.play();
     resetBtn.style.display = "block";
     playAgainBtn.style.display = "block";
     winImg.style.display = "block";
