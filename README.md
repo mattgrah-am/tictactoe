@@ -39,7 +39,14 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 
 -   HTML
 -   CSS
+    -   Flexbox
+    -   Grid
+    -   Media Queries
 -   Javascript
+    -   DOM Manipulation
+-   GIT
+-   Github and Github Pages
+-   Cloudflare Pages (hosting with domain)
 
 ## Planning
 
