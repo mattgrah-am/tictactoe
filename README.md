@@ -47,7 +47,7 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 -   Get inventive with your styling - research CSS effects, animations to spiff things up
 -   Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 -   Use timers to display "waiting..." messages while users are waiting to be matched
--   Research web audio API and add sound effects to your game
+-   [x] Research web audio API and add sound effects to your game
 -   Be creative! Bend the rules and give it a twist!
 
 ## Technology Used
