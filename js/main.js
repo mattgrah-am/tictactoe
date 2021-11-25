@@ -35,6 +35,12 @@ let currentGame = [];
 
 // Main Click
 playWindow.addEventListener("mousedown", function (event) {
+    if (localStorage.getItem("score1") != null || localStorage.getItem("score2") != null) {
+        player1 = +localStorage.getItem("score1");
+        player2 = +localStorage.getItem("score2");
+        playerScore1.innerText = player1;
+        playerScore2.innerText = player2;
+    }
     if (!winner) {
         clickXO(event);
         winCheck(event);
@@ -45,7 +51,6 @@ playWindow.addEventListener("mousedown", function (event) {
 
 // Set X or O Function
 function clickXO(event) {
-    console.log(event.target.innerHTML);
     if (event.target.innerHTML === "") {
         return currentPlayer === "Player 1"
             ? clickPlayer("Player 1", event)
@@ -105,6 +110,8 @@ function winCond() {
     resetBtn.style.display = "block";
     playAgainBtn.style.display = "block";
     winImg.style.display = "block";
+    localStorage.setItem("score1", player1);
+    localStorage.setItem("score2", player2);
 }
 
 // Check of draw
@@ -144,5 +151,7 @@ resetBtn.addEventListener("click", function () {
         boardClear();
         playerScore1.innerText = player1 = 0;
         playerScore2.innerText = player2 = 0;
+        localStorage.setItem("score1", player1);
+        localStorage.setItem("score2", player2);
     }
 });

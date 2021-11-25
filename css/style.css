@@ -104,12 +104,12 @@ main {
 
 .player1 {
     background-color: hsl(265, 42%, 63%);
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%) !important;
 }
 
 .player2 {
     background-color: hsl(189, 60%, 34%);
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%) !important;
 }
 
 /* Player indicator */

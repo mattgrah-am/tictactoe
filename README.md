@@ -32,7 +32,7 @@ GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
 
 -   [x] Keep track of multiple game rounds with a win counter
 -   [x] Get inventive with your styling - research CSS effects, animations to spiff things up
--   Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
+-   [x] Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 -   [x] Research web audio API and add sound effects to your game
 
 ## Technology Used
