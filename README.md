@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-GA-SEI - Project 1 - [Live Version](https://tictactoe.mattgrah.am/)
+GA-SEI - Project 1 - [Live Version](https://mattgrah-am.github.io/tictactoe/)
 
 ## Technical Requirements
 
