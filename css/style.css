@@ -112,6 +112,10 @@ main {
     color: hsl(0, 0%, 100%) !important;
 }
 
+.disable {
+    pointer-events: none;
+}
+
 /* Player indicator */
 
 .indicator {

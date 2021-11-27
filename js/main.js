@@ -3,8 +3,8 @@
  */
 
 // Variables
-let player1 = 0;
-let player2 = 0;
+let player1;
+let player2;
 let currentPlayer = "Player 1";
 let winner = false;
 let winAudio = new Audio("./assets/win.mp3");
@@ -33,42 +33,36 @@ const winConditions = [
 
 let currentGame = [];
 
+// Check if there is an existing score?
+if (localStorage.getItem("score1") != null || localStorage.getItem("score2") != null) {
+    player1 = +localStorage.getItem("score1");
+    player2 = +localStorage.getItem("score2");
+    playerScore1.innerText = player1;
+    playerScore2.innerText = player2;
+} else {
+    player1 = 0;
+    player2 = 0;
+}
+
 // Main Click
-playWindow.addEventListener("mousedown", function (event) {
-    if (localStorage.getItem("score1") != null || localStorage.getItem("score2") != null) {
-        player1 = +localStorage.getItem("score1");
-        player2 = +localStorage.getItem("score2");
-        playerScore1.innerText = player1;
-        playerScore2.innerText = player2;
-    }
-    if (!winner) {
-        clickXO(event);
-        winCheck(event);
+playWindow.addEventListener("click", clickBoard);
+
+function clickBoard(event) {
+    if (!winner && event.target.innerHTML === "") {
+        event.target.innerHTML = currentPlayer === "Player 1" ? invader : robot;
+        invaderInd.classList.toggle("hide");
+        robotInd.classList.toggle("hide");
+        event.target.classList.add("disable");
+        currentPlayer === "Player 1" ? (currentPlayer = "Player 2") : (currentPlayer = "Player 1");
+        currentGame.push(event.target.innerHTML);
+        winCheck();
         drawCheck();
     }
     return;
-});
-
-// Set X or O Function
-function clickXO(event) {
-    if (event.target.innerHTML === "") {
-        return currentPlayer === "Player 1"
-            ? clickPlayer("Player 1", event)
-            : clickPlayer("Player 2", event);
-    }
-}
-
-// function for each player styling on click.
-function clickPlayer(player, event) {
-    event.target.innerHTML = player === "Player 1" ? invader : robot;
-    invaderInd.classList.toggle("hide");
-    robotInd.classList.toggle("hide");
-    currentPlayer = player === "Player 1" ? "Player 2" : "Player 1";
 }
 
 // Check for Win Condition
-function winCheck(event) {
-    currentGame.push(event.target.innerText);
+function winCheck() {
     for (let index of winConditions) {
         let a = index[0];
         let b = index[1];
@@ -127,7 +121,7 @@ function drawCheck() {
 // Function for both playagain and reset btn to clear board.
 function boardClear() {
     item.innerText = "";
-    item.classList.remove("player1", "player2");
+    item.classList.remove("player1", "player2", "disable");
     winner = false;
     currentGame = [];
     playerTurn.classList.remove("player1", "player2");
